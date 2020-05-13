@@ -1,4 +1,4 @@
-resource "google_project_service" "inception" {
+resource "google_project_service" "bootstrap" {
   for_each = toset([
     "appengine.googleapis.com",
     "cloudbuild.googleapis.com",

@@ -2,7 +2,7 @@ resource "google_cloudbuild_trigger" "analytics_infra" {
   provider = google-beta
 
   github {
-    owner = "thundercomb"
+    owner = var.owner
     name  = "analytics-infra"
     push {
       branch = "^master$"
@@ -18,7 +18,7 @@ resource "google_cloudbuild_trigger" "analytics_infra" {
     _OWNER                        = var.owner
     _OWNER_EMAIL                  = var.owner_email
     _KUBEFLOW_HOST                = var.kubeflow_host
-    _INCEPTION_IP                 = var.inception_ip
+    _BOOTSTRAP_IP                 = var.bootstrap_ip
   }
 
   description = "BUILD: Analytics Infra"
@@ -32,5 +32,5 @@ resource "google_cloudbuild_trigger" "analytics_infra" {
     ".gitignore"
   ]
 
-  depends_on = [google_project_service.inception]
+  depends_on = [google_project_service.bootstrap]
 }

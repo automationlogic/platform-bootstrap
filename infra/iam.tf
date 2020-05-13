@@ -13,4 +13,6 @@ resource "google_organization_iam_member" "cloud_build" {
   role = each.key
 
   member = "serviceAccount:${var.orchestration_project_number}@cloudbuild.gserviceaccount.com"
+
+  depends_on = [google_project_service.bootstrap]
 }
