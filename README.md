@@ -2,7 +2,7 @@
 
 ## Overview
 
-Bootstrap process for the GCP Climate Analytics & Machine Learning platform. This repo creates basic GCP resources and a pipeline trigger, using a shell script and Terraform code. The rest of the platform is created from the downstream analytics repo triggering the pipeline.
+Bootstrap process for the AL Analytics platform. This repo creates basic GCP resources and a pipeline trigger, using a shell script and Terraform code. The rest of the platform is created by the downstream analytics pipeline.
 
 ## Prerequisites
 
