@@ -23,7 +23,7 @@ if [ $? -ne 0 ]; then
   echo "Change to bootstrap project ..."
   gcloud config set project ${BOOTSTRAP_PROJECT}
   echo "Sleep to take effect ..."
-  sleep 5
+  sleep 20
   echo "Making storage bucket ..."
   gsutil mb -l ${REGION} -p ${BOOTSTRAP_PROJECT} gs://${STATE_BUCKET}/
 fi
