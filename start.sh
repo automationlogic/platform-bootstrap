@@ -1,5 +1,18 @@
 #!/bin/bash
 
+# Check credentials
+echo "Checking for active credentials ..."
+gcloud auth list | grep -qe "ACTIVE\s*ACCOUNT"
+if [ $? -ne 0 ]; then
+  gcloud auth login --no-launch-browser
+fi
+
+echo "Checking for active application-default credentials ..."
+gcloud auth application-default print-access-token >/dev/null 2>&1
+if [ $? -ne 0 ]; then
+  gcloud auth application-default login --no-launch-browser
+fi
+
 # Set variables
 
 source _start_vars.sh
